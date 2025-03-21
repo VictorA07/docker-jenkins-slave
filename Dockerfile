@@ -7,8 +7,8 @@ RUN apt-get update && \
     apt-get install -qy openssh-server && \
     sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd && \
     mkdir -p /var/run/sshd && \
-# Install JDK 11 (apt-get install -qy default-jdk) upgrading to 17
-    apt-get install -y openjdk-17-jdk && \
+# Install JDK 11 (apt-get install -y openjdk-17-jdk) upgrading to 17
+    apt-get install -qy default-jdk && \
 # Install maven
     apt-get install -qy maven && \
 # Cleanup old packages
